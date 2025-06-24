@@ -4,7 +4,7 @@ import './Hero.css';
 const Hero: React.FC = () => {
   const [displayText, setDisplayText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
-  const texts = ['FrontEnd Developer', 'Flutter Developer', 'UI/UX Designer'];
+  const texts = ['FrontEnd Developer', 'Mobile Applications', 'UI/UX Designer'];
 
   useEffect(() => {
     const currentText = texts[currentIndex];
