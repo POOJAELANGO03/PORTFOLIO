@@ -26,7 +26,7 @@ const Header: React.FC = () => {
     <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
       <nav className="nav container">
         <div className="nav-brand">
-          <span className="logo">Portfolio</span>
+          <span className="logo">POOJZ</span>
         </div>
         
         <ul className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>

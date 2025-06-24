@@ -4,12 +4,12 @@ import './Hero.css';
 const Hero: React.FC = () => {
   const [displayText, setDisplayText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
-  const texts = ['Designer', 'Developer', 'Creative'];
-  
+  const texts = ['FrontEnd Developer', 'Flutter Developer', 'UI/UX Designer'];
+
   useEffect(() => {
     const currentText = texts[currentIndex];
     let index = 0;
-    
+
     const typeInterval = setInterval(() => {
       if (index <= currentText.length) {
         setDisplayText(currentText.slice(0, index));
@@ -49,12 +49,12 @@ const Hero: React.FC = () => {
           <div className="shape shape-4"></div>
         </div>
       </div>
-      
+
       <div className="container hero-content">
         <div className="hero-text animate-fadeInUp">
           <p className="hero-greeting">Hello, I'm</p>
           <h1 className="hero-title">
-            <span className="name">Alex Johnson</span>
+            <span className="name">POOJA ELANGO</span>
             <br />
             <span className="role text-gradient">
               {displayText}
@@ -62,11 +62,10 @@ const Hero: React.FC = () => {
             </span>
           </h1>
           <p className="hero-description">
-            Passionate about creating exceptional digital experiences through 
-            innovative design and clean code. I transform ideas into beautiful, 
-            functional solutions that make a difference.
+            Architect of intelligent interfaces, fusing algorithmic precision with expressive design.  
+            I craft transformative digital experiences where AI, aesthetics, and functionality converge seamlessly.
           </p>
-          
+
           <div className="hero-buttons">
             <button className="btn btn-primary" onClick={scrollToContact}>
               Get In Touch
@@ -76,7 +75,7 @@ const Hero: React.FC = () => {
             </button>
           </div>
         </div>
-        
+
         <div className="hero-visual animate-fadeIn">
           <div className="hero-image-container">
             <div className="hero-image">
@@ -88,21 +87,11 @@ const Hero: React.FC = () => {
                 </div>
               </div>
             </div>
-            <div className="floating-elements">
-              <div className="floating-element element-1">
-                <span>React</span>
-              </div>
-              <div className="floating-element element-2">
-                <span>Design</span>
-              </div>
-              <div className="floating-element element-3">
-                <span>UI/UX</span>
-              </div>
-            </div>
+            {/* Floating elements removed */}
           </div>
         </div>
       </div>
-      
+
       <div className="scroll-indicator">
         <div className="scroll-arrow"></div>
       </div>
