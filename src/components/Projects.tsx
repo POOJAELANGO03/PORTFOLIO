@@ -90,7 +90,7 @@ const Projects: React.FC = () => {
         <div className="section-header">
           <h2 className="section-title text-gradient">Featured Projects</h2>
           <p className="section-subtitle">
-            A showcase of my recent work and creative solutions
+           From Code to Reality
           </p>
         </div>
 

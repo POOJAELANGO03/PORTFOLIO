@@ -67,7 +67,7 @@ const Footer: React.FC = () => {
         
         <div className="footer-bottom">
           <div className="footer-copyright">
-            <p>&copy; {currentYear} Alex Johnson. All rights reserved.</p>
+            <p>&copy; {currentYear} PoojaElango. All rights reserved.</p>
           </div>
           <button className="back-to-top" onClick={scrollToTop}>
             <svg viewBox="0 0 24 24" fill="currentColor">

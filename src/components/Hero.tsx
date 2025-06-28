@@ -1,5 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import './Hero.css';
+import profile from "../assets/Profile 2.jpg"
+
+
+
+
 
 const Hero: React.FC = () => {
   const [displayText, setDisplayText] = useState('');
@@ -62,7 +67,7 @@ const Hero: React.FC = () => {
             </span>
           </h1>
           <p className="hero-description">
-            Architect of intelligent interfaces, fusing algorithmic precision with expressive design.  
+            Architect of intelligent interfaces, fusing algorithmic precision with expressive design.
             I craft transformative digital experiences where AI, aesthetics, and functionality converge seamlessly.
           </p>
 
@@ -77,19 +82,19 @@ const Hero: React.FC = () => {
         </div>
 
         <div className="hero-visual animate-fadeIn">
-          <div className="hero-image-container">
-            <div className="hero-image">
-              <div className="profile-placeholder">
+          
                 <div className="profile-icon">
-                  <svg viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                  </svg>
+                  <img src={profile}></img>
                 </div>
-              </div>
-            </div>
-            {/* Floating elements removed */}
-          </div>
+
+
         </div>
+
+
+
+
+
+        
       </div>
 
       <div className="scroll-indicator">
