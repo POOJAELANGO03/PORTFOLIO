@@ -66,7 +66,11 @@ const Skills: React.FC = () => {
             <div key={skill.icon} className="flip-card">
               <div className="flip-inner">
                 <div className="flip-front">
-                  <img src={iconMap[skill.icon]} alt={skill.icon} className="icon-image" />
+                  <img
+                    src={iconMap[skill.icon]}
+                    alt={skill.icon}
+                    className="icon-image"
+                  />
                 </div>
                 <div className="flip-back">
                   <p>{skill.label}</p>
