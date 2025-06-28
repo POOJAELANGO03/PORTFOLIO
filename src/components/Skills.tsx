@@ -14,6 +14,7 @@ import reactIcon from "../assets/icons/react.png";
 import typescriptIcon from "../assets/icons/typescript.png";
 import figmaIcon from "../assets/icons/figma.png";
 
+// Icon mapping
 const iconMap: Record<string, string> = {
   css: cssIcon,
   firebase: firebaseIcon,
@@ -29,7 +30,14 @@ const iconMap: Record<string, string> = {
   figma: figmaIcon,
 };
 
-const skillList = [
+// Interface with icon and label
+interface Skill {
+  icon: string;
+  label: string;
+}
+
+// Skills list with flip labels
+const skillList: Skill[] = [
   { icon: 'react', label: 'Crafted UIs' },
   { icon: 'typescript', label: 'Typed Power' },
   { icon: 'javascript', label: 'Logic Flow' },
@@ -54,8 +62,8 @@ const Skills: React.FC = () => {
         </div>
 
         <div className="skills-grid">
-          {skillList.map((skill, index) => (
-            <div key={index} className="flip-card">
+          {skillList.map((skill) => (
+            <div key={skill.icon} className="flip-card">
               <div className="flip-inner">
                 <div className="flip-front">
                   <img src={iconMap[skill.icon]} alt={skill.icon} className="icon-image" />

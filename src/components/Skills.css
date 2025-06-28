@@ -30,7 +30,6 @@
   margin: 0 auto;
 }
 
-/* Flip card styles */
 .flip-card {
   background: transparent;
   perspective: 1000px;
@@ -42,7 +41,6 @@
   position: relative;
   width: 100%;
   height: 100%;
-  text-align: center;
   transition: transform 0.6s ease;
   transform-style: preserve-3d;
 }
@@ -72,16 +70,9 @@
 
 .flip-back {
   transform: rotateY(180deg);
-  background: rgba(255, 255, 255, 0.06);
-  border-radius: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 0 15px #a084e8, 0 0 25px #c084fc;
   padding: 8px;
 }
 
-/* 💡 Only the text gets the font and black color */
 .flip-back p {
   color: #000000;
   font-family: 'Satisfy', cursive;
@@ -89,11 +80,6 @@
   margin: 0;
   text-align: center;
 }
-
-
-
-
-
 
 /* Responsive */
 @media (max-width: 768px) {
