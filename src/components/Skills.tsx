@@ -12,8 +12,8 @@ import nodeIcon from "../assets/icons/node.png";
 import pythonIcon from "../assets/icons/python.png";
 import reactIcon from "../assets/icons/react.png";
 import typescriptIcon from "../assets/icons/typescript.png";
+import figmaIcon from "../assets/icons/figma.png";
 
-// Map icon keys to image imports
 const iconMap: Record<string, string> = {
   css: cssIcon,
   firebase: firebaseIcon,
@@ -26,65 +26,43 @@ const iconMap: Record<string, string> = {
   python: pythonIcon,
   react: reactIcon,
   typescript: typescriptIcon,
+  figma: figmaIcon,
 };
 
-interface Skill {
-  
-  category: string;
-  icon: string;
-}
+const skillList = [
+  { icon: 'react', label: 'Crafted UIs' },
+  { icon: 'typescript', label: 'Typed Power' },
+  { icon: 'javascript', label: 'Logic Flow' },
+  { icon: 'html', label: 'Skeleton Maker' },
+  { icon: 'css', label: 'Style Wizard' },
+  { icon: 'nodejs', label: 'API Architect' },
+  { icon: 'python', label: 'Smart Scripts' },
+  { icon: 'mongodb', label: 'Data Trees' },
+  { icon: 'firebase', label: 'Realtime Sync' },
+  { icon: 'java', label: 'Backbone Logic' },
+  { icon: 'flutter', label: 'Mobile Magic' },
+  { icon: 'figma', label: 'Design Lab' },
+];
 
 const Skills: React.FC = () => {
-  const skills: Skill[] = [
-    {  category: 'frontend', icon: 'react' },
-    {  category: 'frontend', icon: 'typescript' },
-    {  category: 'frontend', icon: 'javascript' },
-    { category: 'frontend', icon: 'html' },
-    {  category: 'frontend', icon: 'css' },
-    {  category: 'backend', icon: 'nodejs' },
-    { category: 'backend', icon: 'python' },
-    {  category: 'backend', icon: 'mongodb' },
-    {  category: 'backend', icon: 'firebase' },
-    { category: 'backend', icon: 'java' },
-    {  category: 'backend', icon: 'flutter' },
-  ];
-
-  const categories = [
-    { id: 'frontend', label: 'Frontend Development', color: 'var(--lavender)' },
-    { id: 'backend', label: 'Backend Development', color: 'var(--lavender-light)' },
-  ];
-
   return (
-    <section id="skills" className="skills section-padding">
+    <section id="skills" className="skills-section">
       <div className="container">
         <div className="section-header">
-          <h2 className="section-title text-gradient">Skills & Technologies</h2>
+          <h2 className="section-title">Skills & Technologies</h2>
           <p className="section-subtitle">My Digital DNA</p>
         </div>
 
-        <div className="skills-content">
-          {categories.map(category => (
-            <div key={category.id} className="skill-category">
-             
-              <div className="skills-grid">
-                {skills
-                  .filter(skill => skill.category === category.id)
-                  .map(skill => (
-                    <div key={skill.name} className="skill-item glass">
-                      <div className="skill-header">
-                        <div className="skill-icon">
-                          <img
-                            src={iconMap[skill.icon]}
-                            alt={`${skill.name} icon`}
-                            className="icon-image"
-                          />
-                        </div>
-                        <div className="skill-info">
-                          <h4 className="skill-name">{skill.name}</h4>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
+        <div className="skills-grid">
+          {skillList.map((skill, index) => (
+            <div key={index} className="flip-card">
+              <div className="flip-inner">
+                <div className="flip-front">
+                  <img src={iconMap[skill.icon]} alt={skill.icon} className="icon-image" />
+                </div>
+                <div className="flip-back">
+                  <p>{skill.label}</p>
+                </div>
               </div>
             </div>
           ))}
