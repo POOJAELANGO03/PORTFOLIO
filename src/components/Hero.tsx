@@ -47,13 +47,19 @@ const Hero: React.FC = () => {
   return (
     <section id="home" className="hero">
       <div className="hero-background">
-        <div className="floating-shapes">
-          <div className="shape shape-1"></div>
-          <div className="shape shape-2"></div>
-          <div className="shape shape-3"></div>
-          <div className="shape shape-4"></div>
-        </div>
-      </div>
+  <div className="floating-shapes">
+    <div className="shape shape-1"></div>
+    <div className="shape shape-2"></div>
+    <div className="shape shape-3"></div>
+    <div className="shape shape-4"></div>
+
+    {/* Extra floating shapes - same style */}
+    <div className="shape shape-5"></div>
+    <div className="shape shape-6"></div>
+    <div className="shape shape-7"></div>
+  </div>
+</div>
+
 
       <div className="container hero-content">
         <div className="hero-text animate-fadeInUp">
@@ -81,14 +87,18 @@ const Hero: React.FC = () => {
           </div>
         </div>
 
-        <div className="hero-visual animate-fadeIn">
-          
-                <div className="profile-icon">
-                  <img src={profile}></img>
-                </div>
-
-
+       <div className="hero-visual">
+  <div className="hero-image-container">
+    <div className="hero-ring"></div> {/* <- Ring behind image */}
+    <div className="hero-image">
+      <div className="profile-placeholder">
+        <div className="profile-icon">
+          <img src={profile} alt="Profile" />
         </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 

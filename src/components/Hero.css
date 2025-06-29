@@ -33,37 +33,66 @@
   width: 80px;
   height: 80px;
   background: var(--lavender);
-  top: 20%;
-  left: 10%;
+  top: 18%;
+  left: 8%;
   animation-delay: 0s;
 }
 
 .shape-2 {
-  width: 120px;
-  height: 120px;
-  background: var(--lavender-light);
-  top: 60%;
-  right: 15%;
+  width: 100px;
+  height: 100px;
+  background: var(--lavender);
+  top: 76%;
+  right: 12%;
   animation-delay: -2s;
 }
 
 .shape-3 {
   width: 60px;
   height: 60px;
-  background: var(--lavender-dark);
-  top: 30%;
-  right: 30%;
-  animation-delay: -4s;
+  background: var(--lavender);
+  top: 18%;
+  right: 25%;
+  animation-delay: -3s;
 }
 
 .shape-4 {
-  width: 100px;
-  height: 100px;
+  width: 110px;
+  height: 110px;
   background: var(--lavender);
-  bottom: 20%;
-  left: 20%;
+  bottom: 8%;
+  left: 15%;
   animation-delay: -1s;
 }
+
+.shape-5 {
+  width: 75px;
+  height: 75px;
+  background: var(--lavender);
+  top: 42%;
+  left: 22%;
+  animation-delay: -3.5s;
+}
+
+.shape-6 {
+  width: 85px;
+  height: 85px;
+  background: var(--lavender);
+  bottom: 70%;
+  right: 50%;
+  animation-delay: -2.5s;
+}
+
+.shape-7 {
+  width: 65px;
+  height: 65px;
+  background: var(--lavender);
+  top: 67%;
+  right: 50%;
+  animation-delay: -1.5s;
+}
+
+
 
 .hero-content {
   display: grid;
@@ -173,9 +202,17 @@
 
 .hero-image-container {
   position: relative;
-  width: 400px;
-  height: 400px;
+  width: 350px;
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* ADD THESE TO ADJUST POSITION */
+  top: 70px;         /* ⬆ Lifts the whole image and ring up */
+  left: 70px;          /* ➡ Keeps it centered horizontally */
 }
+
 
 .hero-image {
   width: 300px;
@@ -339,32 +376,61 @@
 }
 
 .hero-image-container {
-  width: 300px; /* Adjust based on your design */
-  height: 300px;
+  position: relative;
+  width: 350px;
+  height: 350px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.hero-image {
+.hero-ring {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  border-radius: 50%; /* For circular profile picture */
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, var(--lavender), transparent);
+  animation: rotate 10s linear infinite;
+  z-index: 0;
+}
+
+.hero-image {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background: var(--bg-secondary);
+  border: 3px solid var(--lavender);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
   overflow: hidden;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
 .profile-placeholder {
   width: 100%;
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.profile-icon {
+  width: 100%;
+  height: 100%;
 }
 
 .profile-icon img {
-  width: 300%;
-  height: 300%;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  border-radius: 100%;
+  border-radius: 50%;
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }

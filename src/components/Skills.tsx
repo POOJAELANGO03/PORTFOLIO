@@ -1,5 +1,6 @@
 import React from 'react';
 import './Skills.css';
+import { motion } from 'framer-motion';
 
 import cssIcon from "../assets/icons/css.png";
 import firebaseIcon from "../assets/icons/firebase.png";
@@ -14,7 +15,6 @@ import reactIcon from "../assets/icons/react.png";
 import typescriptIcon from "../assets/icons/typescript.png";
 import figmaIcon from "../assets/icons/figma.png";
 
-// Icon mapping
 const iconMap: Record<string, string> = {
   css: cssIcon,
   firebase: firebaseIcon,
@@ -30,13 +30,11 @@ const iconMap: Record<string, string> = {
   figma: figmaIcon,
 };
 
-// Interface with icon and label
 interface Skill {
   icon: string;
   label: string;
 }
 
-// Skills list with flip labels
 const skillList: Skill[] = [
   { icon: 'react', label: 'Crafted UIs' },
   { icon: 'typescript', label: 'Typed Power' },
@@ -56,27 +54,36 @@ const Skills: React.FC = () => {
   return (
     <section id="skills" className="skills-section">
       <div className="container">
-        <div className="section-header">
+        <motion.div
+          className="section-header"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+        >
           <h2 className="section-title">Skills & Technologies</h2>
           <p className="section-subtitle">My Digital DNA</p>
-        </div>
+        </motion.div>
 
         <div className="skills-grid">
-          {skillList.map((skill) => (
-            <div key={skill.icon} className="flip-card">
-              <div className="flip-inner">
-                <div className="flip-front">
-                  <img
-                    src={iconMap[skill.icon]}
-                    alt={skill.icon}
-                    className="icon-image"
-                  />
-                </div>
-                <div className="flip-back">
-                  <p>{skill.label}</p>
-                </div>
-              </div>
-            </div>
+          {skillList.map((skill, index) => (
+            <motion.div
+              key={skill.icon}
+              className="skill-box"
+              initial={{ opacity: 0, scale: 0.5, rotate: -15 }}
+              whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+              transition={{
+                duration: 0.7,
+                delay: index * 0.12,
+                type: 'spring',
+                stiffness: 100,
+              }}
+              viewport={{ once: false, amount: 0.4 }}
+              whileHover={{ scale: 1.05, y: -6 }}
+            >
+              <img src={iconMap[skill.icon]} alt={skill.label} />
+              <p className="skill-label">{skill.label}</p>
+            </motion.div>
           ))}
         </div>
       </div>

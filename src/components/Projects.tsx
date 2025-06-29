@@ -141,7 +141,7 @@ const Projects: React.FC = () => {
                 <p className="project-description">{project.description}</p>
                 <div className="project-tech">
                   {project.technologies.map(tech => (
-                    <span key={tech} className="tech-tag">{tech}</span>//ONU PURILA
+                    <span key={tech} className="tech-tag">{tech}</span>
                   ))}
                 </div>
               </div>
