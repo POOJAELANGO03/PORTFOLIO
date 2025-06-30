@@ -210,7 +210,7 @@
 
   /* ADD THESE TO ADJUST POSITION */
   top: 70px;         /* ⬆ Lifts the whole image and ring up */
-  left: 70px;          /* ➡ Keeps it centered horizontally */
+  left: 0px;          /* ➡ Keeps it centered horizontally */
 }
 
 

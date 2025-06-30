@@ -1,123 +1,82 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './Projects.css';
+import project4Image from "../assets/icons/project4.png";
+
 
 interface Project {
   id: number;
   title: string;
   description: string;
   technologies: string[];
-  category: string;
   image: string;
   liveUrl?: string;
   githubUrl?: string;
 }
 
 const Projects: React.FC = () => {
-  const [activeFilter, setActiveFilter] = useState('all');
-
   const projects: Project[] = [
     {
       id: 1,
-      title: "E-Commerce Platform",
-      description: "A modern, responsive e-commerce platform with advanced filtering, cart management, and secure payment integration.",
-      technologies: ["React", "Node.js", "MongoDB", "Stripe"],
-      category: "web",
+      title: "AI-Powered Interview System & Resume Analyzer",
+      description: "An AI-driven system that generates real-time interview questions, evaluates answers, and provides AI-powered feedback. Integrated resume analysis using Gemma AI, offering structured improvements and professional insights.",
+      technologies: ["React.js", "Node.js", "Express.js", "Gemma AI", "Ollama API", "FastAPI", "Firebase"],
       image: "project1",
       liveUrl: "#",
-      githubUrl: "#"
+      githubUrl: "https://github.com/POOJAELANGO03/AI-Powered-Interview-System-and-Resume-Analyzer"
     },
     {
       id: 2,
-      title: "Task Management App",
-      description: "Collaborative task management application with real-time updates, team collaboration, and progress tracking.",
-      technologies: ["React", "TypeScript", "Firebase", "Material-UI"],
-      category: "web",
+      title: "Smart Assistive Technology",
+      description: "Native Android app that enables blind and deaf users to learn independently through Braille vibrations, voice assistance, hands-free controls, chatbot support, and accessible, self-paced tutorials.Incorporated inclusive design principles to ensure seamless accessibility and user empowerment across all interaction modes.",
+      technologies:  ["React Native", "OpenAI"],
       image: "project2",
       liveUrl: "#",
-      githubUrl: "#"
-    },
-    {
-      id: 3,
-      title: "Brand Identity Design",
-      description: "Complete brand identity package including logo design, color palette, typography, and brand guidelines.",
-      technologies: ["Figma", "Illustrator", "Photoshop"],
-      category: "design",
-      image: "project3"
+      githubUrl: "https://github.com/POOJAELANGO03/Smart-Assistive-Technology"
     },
     {
       id: 4,
-      title: "Mobile Banking App",
-      description: "Secure mobile banking application with biometric authentication, transaction history, and budget tracking.",
-      technologies: ["React Native", "Redux", "Node.js", "PostgreSQL"],
-      category: "mobile",
-      image: "project4",
-      liveUrl: "#"
+      title: "Learns",
+      description: "Engineered a dynamic web application that simplifies access to structured, categorized placement resources. Integrated features are thoughtfully tailored for freshers, offering personalized preparation tools, curated company insights, and intuitive navigation to enhance placement readiness.",
+      technologies:["React.js", "Node.js", "Express.js", "Firebase"],
+      image: project4Image,
+      liveUrl: "#",
+      githubUrl: "https://github.com/POOJAELANGO03/Learns" // ✅ GitHub link added
     },
     {
       id: 5,
-      title: "Restaurant Website",
-      description: "Modern restaurant website with online reservation system, menu display, and location integration.",
-      technologies: ["React", "Gatsby", "Contentful", "Netlify"],
-      category: "web",
+      title: "Academic Resource Hub",
+      description: "Developed a MERN stack web application to streamline access to categorized academic resources with specialized features for freshers.",
+      technologies:  ["React.js", "Node.js", "Express.js", "MongoDB"],
       image: "project5",
       liveUrl: "#",
-      githubUrl: "#"
-    },
-    {
-      id: 6,
-      title: "UI/UX Case Study",
-      description: "Complete redesign of a healthcare platform focusing on user experience and accessibility improvements.",
-      technologies: ["Figma", "Principle", "Sketch"],
-      category: "design",
-      image: "project6"
+      githubUrl: "https://github.com/POOJAELANGO03/ACADEMIC-RESOURCE-HUB"
     }
   ];
-
-  const categories = [
-    { id: 'all', label: 'All Projects' },
-    { id: 'web', label: 'Web Development' },
-    { id: 'mobile', label: 'Mobile Apps' },
-    { id: 'design', label: 'Design' }
-  ];
-
-  const filteredProjects = activeFilter === 'all' 
-    ? projects 
-    : projects.filter(project => project.category === activeFilter);
 
   return (
     <section id="projects" className="projects section-padding">
       <div className="container">
         <div className="section-header">
           <h2 className="section-title text-gradient">Featured Projects</h2>
-          <p className="section-subtitle">
-           From Code to Reality
-          </p>
-        </div>
-
-        <div className="filter-tabs">
-          {categories.map(category => (
-            <button
-              key={category.id}
-              className={`filter-btn ${activeFilter === category.id ? 'active' : ''}`}
-              onClick={() => setActiveFilter(category.id)}
-            >
-              {category.label}
-            </button>
-          ))}
+          <p className="section-subtitle">From Code to Reality</p>
         </div>
 
         <div className="projects-grid">
-          {filteredProjects.map(project => (
+          {projects.map(project => (
             <div key={project.id} className="project-card glass glow">
               <div className="project-image">
                 <div className="project-placeholder">
-                  <div className="placeholder-icon">
-                    <svg viewBox="0 0 24 24" fill="currentColor">
-                      <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
-                    </svg>
-                  </div>
-                  <div className="project-overlay">
-                    <div className="project-actions">
+  {project.id === 4 ? (
+    <img src={project.image} alt={project.title} className="project-img" />
+  ) : (
+    <div className="placeholder-icon">
+      <svg viewBox="0 0 24 24" fill="currentColor">
+        <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z" />
+      </svg>
+    </div>
+  )}
+  <div className="project-overlay">
+    <div className="project-actions">
                       {project.liveUrl && (
                         <a href={project.liveUrl} className="action-btn" target="_blank" rel="noopener noreferrer">
                           <svg viewBox="0 0 24 24" fill="currentColor">
