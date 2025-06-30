@@ -37,7 +37,7 @@ const About: React.FC = () => {
                 As a postgraduate in Computer Applications, I’ve architected AI-infused systems, crafted inclusive assistive technologies, and shaped seamless digital experiences.
               </p>
               <p>
-                My work bridges aesthetic clarity with algorithmic logic—merging React Native, Firebase, and UI/UX design to deliver solutions that are not just functional, but deeply resonant. 
+                My work bridges aesthetic clarity with algorithmic logic—merging Flutter, Firebase, and UI/UX design to deliver solutions that are not just functional, but deeply resonant. 
                 Each project is a canvas where empathy meets execution, and where innovation is measured by impact.
               </p>
             </div>
