@@ -1,11 +1,12 @@
 import React, { useEffect, useRef } from 'react';
 import './Hero.css';
+import profileImg from '../assets/PORTFOLIO PROFILE.jpeg';
 
 const Hero: React.FC = () => {
   const darkPanelRef = useRef<HTMLDivElement>(null);
   const wrapperRef = useRef<HTMLElement>(null);
   
-  // Refs for individual text lines to create staggered parallax
+  // Staggered parallax refs
   const lightHelloRef = useRef<HTMLHeadingElement>(null);
   const lightNameRef = useRef<HTMLHeadingElement>(null);
   const darkHelloRef = useRef<HTMLHeadingElement>(null);
@@ -17,23 +18,18 @@ const Hero: React.FC = () => {
       const darkPanel = darkPanelRef.current;
       if (!wrapper || !darkPanel) return;
 
-      // Use document-relative position so progress = 0 when page loads
-      const wrapperTop = wrapper.offsetTop;          // px from top of document
-      const wrapperHeight = wrapper.offsetHeight;    // full 300vh height
+      const wrapperTop = wrapper.offsetTop;
+      const wrapperHeight = wrapper.offsetHeight;
       const viewportHeight = window.innerHeight;
       const scrollY = window.scrollY;
 
-      // How far we've scrolled INTO the hero section (negative = not there yet)
       const scrolledIntoSection = scrollY - wrapperTop;
       const scrollableDistance = wrapperHeight - viewportHeight;
-
-      // progress goes 0 → 1 as we scroll through the section
       const progress = Math.max(0, Math.min(1, scrolledIntoSection / scrollableDistance));
 
-      // Dark panel grows from 0vw → 100vw as you scroll
       darkPanel.style.width = `${progress * 100}vw`;
 
-      // Staggered parallax: HELLO moves at one speed, NAME moves at another
+      // STAGGERED PARALLAX: hello moves slower than I'm Pooja
       const helloSlideX = progress * -40; 
       const nameSlideX = progress * -60;
       
@@ -45,7 +41,7 @@ const Hero: React.FC = () => {
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll(); // run once on mount
+    handleScroll(); 
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -53,7 +49,7 @@ const Hero: React.FC = () => {
     <section id="home" className="hero-wrapper" ref={wrapperRef}>
       <div className="hero-sticky">
 
-        {/* ── BOTTOM LAYER: Black text on white ── */}
+        {/* ── BOTTOM LAYER: White BG ── */}
         <div className="hero-layer hero-layer-light">
           <div className="container hero-content">
             <div className="hero-bottom-left">
@@ -66,9 +62,14 @@ const Hero: React.FC = () => {
           </div>
         </div>
 
-        {/* ── TOP LAYER: White text inside dark panel (clips in from left) ── */}
+        {/* ── TOP LAYER: Dark Panel Wipe ── */}
         <div className="hero-dark-panel" ref={darkPanelRef}>
           <div className="hero-layer hero-layer-dark">
+            {/* Profile Image - Only in Dark Layer */}
+            <div className="hero-profile-container">
+              <img src={profileImg} alt="Pooja Profile" className="hero-profile-img" />
+            </div>
+
             <div className="container hero-content">
               <div className="hero-bottom-left">
                 <span className="hero-label tagline-label">A 23 year old girl from India :)</span>
