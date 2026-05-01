@@ -67,9 +67,9 @@ p {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1400px; /* Increased for a wider, modern feel */
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 4vw; /* Matches the Hero section for consistent alignment */
 }
 
 .section-padding {

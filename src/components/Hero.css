@@ -77,8 +77,6 @@
   height: 100%;
   padding-top: 80px; /* clear fixed header */
   padding-bottom: 50px;
-  padding-left: 4vw;  /* Add horizontal padding to prevent clipping */
-  padding-right: 4vw;
 }
 
 /* Bottom-left label */

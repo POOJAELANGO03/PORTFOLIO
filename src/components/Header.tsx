@@ -7,7 +7,9 @@ const Header: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      // Stay transparent throughout the long Hero scroll (300vh)
+      // Only show the frame when we approach the next section
+      setIsScrolled(window.scrollY > window.innerHeight * 2.0);
     };
 
     window.addEventListener('scroll', handleScroll);
