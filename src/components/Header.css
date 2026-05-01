@@ -4,18 +4,15 @@
   left: 0;
   width: 100%;
   z-index: 1000;
-  transition: all 0.3s ease;
-  padding: 1rem 0;
+  padding: 1.2rem 0;
+  /* mix-blend-mode allows nav links to invert on both light and dark panels */
+  mix-blend-mode: difference;
+  pointer-events: none; /* the header itself doesn't intercept clicks... */
 }
 
-.header.scrolled {
-  background: rgba(10, 10, 10, 0.95);
-  backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--border);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-}
-
+/* ...but the nav children DO handle clicks */
 .nav {
+  pointer-events: all;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -23,17 +20,18 @@
 }
 
 .nav-brand .logo {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.8rem;
-  font-weight: 600;
-  color: var(--lavender);
+  font-family: 'Manrope', sans-serif;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #ffffff;  /* appears black on white, white on dark — blend mode handles it */
   text-decoration: none;
+  letter-spacing: -0.04em;
 }
 
 .nav-menu {
   display: flex;
   list-style: none;
-  gap: 2rem;
+  gap: 2.5rem;
 }
 
 .nav-item {
@@ -43,27 +41,25 @@
 .nav-link {
   background: none;
   border: none;
-  color: var(--text-secondary);
+  color: #ffffff;  /* inverts via mix-blend-mode */
   text-decoration: none;
   font-weight: 500;
+  font-size: 1rem;
+  font-family: 'Inter', sans-serif;
   padding: 0.5rem 0;
   position: relative;
-  transition: color 0.3s ease;
-  font-size: 1rem;
-}
-
-.nav-link:hover {
-  color: var(--lavender);
+  cursor: pointer;
+  letter-spacing: 0.01em;
 }
 
 .nav-link::after {
   content: '';
   position: absolute;
-  bottom: -5px;
+  bottom: -4px;
   left: 0;
   width: 0;
-  height: 2px;
-  background: linear-gradient(90deg, var(--lavender), var(--lavender-light));
+  height: 1.5px;
+  background: #ffffff;
   transition: width 0.3s ease;
 }
 
@@ -71,6 +67,7 @@
   width: 100%;
 }
 
+/* Hamburger */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -78,44 +75,44 @@
   border: none;
   cursor: pointer;
   padding: 0.5rem;
-  gap: 4px;
+  gap: 5px;
 }
 
 .hamburger span {
-  width: 25px;
-  height: 2px;
-  background: var(--text-primary);
+  width: 24px;
+  height: 1.5px;
+  background: #ffffff;
   transition: all 0.3s ease;
   transform-origin: center;
+  display: block;
 }
 
 .hamburger.active span:nth-child(1) {
-  transform: rotate(45deg) translate(6px, 6px);
+  transform: rotate(45deg) translate(5px, 5px);
 }
-
 .hamburger.active span:nth-child(2) {
   opacity: 0;
 }
-
 .hamburger.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(6px, -6px);
+  transform: rotate(-45deg) translate(5px, -5px);
 }
 
+/* ── Mobile nav overlay ── */
 @media (max-width: 768px) {
   .nav-menu {
     position: fixed;
-    top: 80px;
+    top: 0;
     left: -100%;
     width: 100%;
-    height: calc(100vh - 80px);
-    background: rgba(10, 10, 10, 0.98);
-    backdrop-filter: blur(20px);
+    height: 100vh;
+    background: #0f0f0f;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
-    padding-top: 3rem;
-    gap: 2rem;
-    transition: left 0.3s ease;
+    gap: 2.5rem;
+    transition: left 0.4s ease;
+    mix-blend-mode: normal;
+    pointer-events: all;
   }
 
   .nav-menu.active {
@@ -123,8 +120,8 @@
   }
 
   .nav-link {
-    font-size: 1.2rem;
-    padding: 1rem 0;
+    font-size: 2rem;
+    color: #ffffff;
   }
 
   .hamburger {

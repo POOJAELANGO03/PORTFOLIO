@@ -36,50 +36,41 @@ interface Skill {
 }
 
 const skillList: Skill[] = [
-  { icon: 'react', label: 'Crafted UIs' },
-  { icon: 'typescript', label: 'Typed Power' },
-  { icon: 'javascript', label: 'Logic Flow' },
-  { icon: 'html', label: 'Skeleton Maker' },
-  { icon: 'css', label: 'Style Wizard' },
-  { icon: 'nodejs', label: 'API Architect' },
-  { icon: 'python', label: 'Smart Scripts' },
-  { icon: 'mongodb', label: 'Data Trees' },
-  { icon: 'firebase', label: 'Realtime Sync' },
-  { icon: 'java', label: 'Backbone Logic' },
-  { icon: 'flutter', label: 'Mobile Magic' },
-  { icon: 'figma', label: 'Design Lab' },
+  { icon: 'react', label: 'React' },
+  { icon: 'typescript', label: 'TypeScript' },
+  { icon: 'javascript', label: 'JavaScript' },
+  { icon: 'nodejs', label: 'Node.js' },
+  { icon: 'python', label: 'Python' },
+  { icon: 'mongodb', label: 'MongoDB' },
+  { icon: 'firebase', label: 'Firebase' },
+  { icon: 'java', label: 'Java' },
+  { icon: 'flutter', label: 'Flutter' },
+  { icon: 'figma', label: 'Figma' },
+  { icon: 'html', label: 'HTML5' },
+  { icon: 'css', label: 'CSS3' },
 ];
 
 const Skills: React.FC = () => {
   return (
     <section id="skills" className="skills-section">
       <div className="container">
-        <motion.div
-          className="section-header"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <h2 className="section-title">Skills & Technologies</h2>
-          <p className="section-subtitle">My Digital DNA</p>
-        </motion.div>
+        <div className="section-header">
+          <h2 className="section-title">Skills & Stack</h2>
+          <p className="section-subtitle">Core technologies I use to build digital products.</p>
+        </div>
 
         <div className="skills-grid">
           {skillList.map((skill, index) => (
             <motion.div
               key={skill.icon}
               className="skill-box"
-              initial={{ opacity: 0, scale: 0.5, rotate: -15 }}
-              whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{
-                duration: 0.7,
-                delay: index * 0.12,
-                type: 'spring',
-                stiffness: 100,
+                duration: 0.5,
+                delay: index * 0.05,
               }}
-              viewport={{ once: false, amount: 0.4 }}
-              whileHover={{ scale: 1.05, y: -6 }}
+              viewport={{ once: true }}
             >
               <img src={iconMap[skill.icon]} alt={skill.label} />
               <p className="skill-label">{skill.label}</p>

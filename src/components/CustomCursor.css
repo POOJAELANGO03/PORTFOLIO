@@ -1,0 +1,54 @@
+/* ==========================================
+   CUSTOM CURSOR
+   ========================================== */
+
+/* Hide default cursor site-wide */
+*, *::before, *::after {
+  cursor: none !important;
+}
+
+/* ---- Large lagging outer circle ---- */
+.c-outer {
+  position: fixed;
+  top: -25px; /* Half of width to center */
+  left: -25px; /* Half of height to center */
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  /* Medium grey with transparency */
+  background: rgba(140, 140, 140, 0.35);
+  pointer-events: none;
+  z-index: 99998;
+  will-change: transform;
+  /* Smooth transitions for hover effects if you add them later */
+  transition: width 0.3s ease, height 0.3s ease,
+              top 0.3s ease, left 0.3s ease,
+              background 0.3s ease;
+}
+
+/* ---- Small instant inner circle ---- */
+.c-inner {
+  position: fixed;
+  top: -10px; /* Half of width */
+  left: -10px; /* Half of height */
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  /* Lighter grey with higher opacity */
+  background: rgba(200, 200, 200, 0.85);
+  pointer-events: none;
+  z-index: 99999;
+  will-change: transform;
+}
+
+/* Hide custom cursor on touch devices */
+@media (hover: none) and (pointer: coarse) {
+  .c-outer,
+  .c-inner {
+    display: none;
+  }
+
+  *, *::before, *::after {
+    cursor: auto !important;
+  }
+}
