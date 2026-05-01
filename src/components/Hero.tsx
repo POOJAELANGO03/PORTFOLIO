@@ -4,6 +4,12 @@ import './Hero.css';
 const Hero: React.FC = () => {
   const darkPanelRef = useRef<HTMLDivElement>(null);
   const wrapperRef = useRef<HTMLElement>(null);
+  
+  // Refs for individual text lines to create staggered parallax
+  const lightHelloRef = useRef<HTMLHeadingElement>(null);
+  const lightNameRef = useRef<HTMLHeadingElement>(null);
+  const darkHelloRef = useRef<HTMLHeadingElement>(null);
+  const darkNameRef = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,6 +32,16 @@ const Hero: React.FC = () => {
 
       // Dark panel grows from 0vw → 100vw as you scroll
       darkPanel.style.width = `${progress * 100}vw`;
+
+      // Staggered parallax: HELLO moves at one speed, NAME moves at another
+      const helloSlideX = progress * -40; 
+      const nameSlideX = progress * -60;
+      
+      if (lightHelloRef.current) lightHelloRef.current.style.transform = `translateX(${helloSlideX}vw)`;
+      if (darkHelloRef.current) darkHelloRef.current.style.transform = `translateX(${helloSlideX}vw)`;
+      
+      if (lightNameRef.current) lightNameRef.current.style.transform = `translateX(${nameSlideX}vw)`;
+      if (darkNameRef.current) darkNameRef.current.style.transform = `translateX(${nameSlideX}vw)`;
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
@@ -43,11 +59,10 @@ const Hero: React.FC = () => {
             <div className="hero-bottom-left">
               <span className="hero-label">MCA'26</span>
             </div>
-              <div className="hero-main-text text-right">
-                <h1 className="hello-text">hello</h1>
-                <h1 className="name-text">I'm</h1>
-                <h1 className="name-text">Pooja</h1>
-              </div>
+            <div className="hero-main-text text-right">
+              <h1 className="hello-text" ref={lightHelloRef}>hello</h1>
+              <h1 className="name-text" ref={lightNameRef}>I'm Pooja</h1>
+            </div>
           </div>
         </div>
 
@@ -55,13 +70,12 @@ const Hero: React.FC = () => {
         <div className="hero-dark-panel" ref={darkPanelRef}>
           <div className="hero-layer hero-layer-dark">
             <div className="container hero-content">
-              <div className="hero-main-text text-left">
-                <h1 className="hello-text">hello</h1>
-                <h1 className="name-text">I'm</h1>
-                <h1 className="name-text">Pooja</h1>
+              <div className="hero-bottom-left">
+                <span className="hero-label tagline-label">A 23 year old girl from India :)</span>
               </div>
-              <div className="hero-bottom-right">
-                <span className="hero-label text-right">A 23 YEAR OLD GIRL FROM INDIA :)</span>
+              <div className="hero-main-text text-right">
+                <h1 className="hello-text" ref={darkHelloRef}>hello</h1>
+                <h1 className="name-text" ref={darkNameRef}>I'm Pooja</h1>
               </div>
             </div>
           </div>

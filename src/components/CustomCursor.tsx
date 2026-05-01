@@ -14,13 +14,13 @@ const CustomCursor = () => {
       mouseX = e.clientX;
       mouseY = e.clientY;
 
-      // Inner (small) follows instantly
+      // Inner dot follows mouse instantly
       if (innerRef.current) {
         innerRef.current.style.transform = `translate(${mouseX}px, ${mouseY}px)`;
       }
     };
 
-    // Outer (big) follows with smooth lag
+    // Outer ring follows mouse with smooth lag (LERP)
     const loop = () => {
       outerX += (mouseX - outerX) * 0.1;
       outerY += (mouseY - outerY) * 0.1;
