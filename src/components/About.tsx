@@ -25,12 +25,12 @@ const About: React.FC = () => {
           {/* About Text Animation */}
           <motion.div
             className="about-text"
-            initial={{ x: -60, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
+            initial={{ y: 40, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8 }}
-             viewport={{ once: false, amount: 0.4 }}
+            viewport={{ once: true }}
           >
-            <div className="about-card glass glow">
+            <div className="about-card">
               <h3>My Story</h3>
               <p>
                 Rooted in a deep fascination for human-computer synergy, my journey from academia to applied innovation has been a pursuit of purposeful design and intelligent engineering.
@@ -46,10 +46,10 @@ const About: React.FC = () => {
           {/* Timeline Animation */}
           <motion.div
             className="about-visual"
-            initial={{ x: 60, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: false, amount: 0.4 }}
+            initial={{ y: 40, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            viewport={{ once: true }}
           >
             <div className="experience-timeline">
               {[
@@ -69,21 +69,13 @@ const About: React.FC = () => {
                   desc: "Earned 83.67% in Computer Science & Mathematics stream",
                 },
               ].map((item, index) => (
-                <motion.div
-                  key={index}
-                  className="timeline-item"
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.2, duration: 0.6 }}
-                   viewport={{ once: false, amount: 0.4 }}
-                >
-                  <div className="timeline-dot"></div>
+                <div key={index} className="timeline-item">
                   <div className="timeline-content">
                     <h4>{item.title}</h4>
                     <span className="timeline-date">{item.date}</span>
                     <p>{item.desc}</p>
                   </div>
-                </motion.div>
+                </div>
               ))}
             </div>
           </motion.div>

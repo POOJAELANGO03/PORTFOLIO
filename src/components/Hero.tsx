@@ -1,113 +1,73 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import './Hero.css';
-import profile from "../assets/Profile 2.jpg"
-
-
-
-
 
 const Hero: React.FC = () => {
-  const [displayText, setDisplayText] = useState('');
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const texts = ['FrontEnd Developer', 'Mobile Applications', 'UI/UX Designer'];
+  const darkPanelRef = useRef<HTMLDivElement>(null);
+  const wrapperRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    const currentText = texts[currentIndex];
-    let index = 0;
+    const handleScroll = () => {
+      const wrapper = wrapperRef.current;
+      const darkPanel = darkPanelRef.current;
+      if (!wrapper || !darkPanel) return;
 
-    const typeInterval = setInterval(() => {
-      if (index <= currentText.length) {
-        setDisplayText(currentText.slice(0, index));
-        index++;
-      } else {
-        clearInterval(typeInterval);
-        setTimeout(() => {
-          setCurrentIndex((prevIndex) => (prevIndex + 1) % texts.length);
-        }, 2000);
-      }
-    }, 100);
+      // Use document-relative position so progress = 0 when page loads
+      const wrapperTop = wrapper.offsetTop;          // px from top of document
+      const wrapperHeight = wrapper.offsetHeight;    // full 300vh height
+      const viewportHeight = window.innerHeight;
+      const scrollY = window.scrollY;
 
-    return () => clearInterval(typeInterval);
-  }, [currentIndex]);
+      // How far we've scrolled INTO the hero section (negative = not there yet)
+      const scrolledIntoSection = scrollY - wrapperTop;
+      const scrollableDistance = wrapperHeight - viewportHeight;
 
-  const scrollToContact = () => {
-    const element = document.getElementById('contact');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+      // progress goes 0 → 1 as we scroll through the section
+      const progress = Math.max(0, Math.min(1, scrolledIntoSection / scrollableDistance));
 
-  const scrollToProjects = () => {
-    const element = document.getElementById('projects');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+      // Dark panel grows from 0vw → 100vw as you scroll
+      darkPanel.style.width = `${progress * 100}vw`;
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll(); // run once on mount
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   return (
-    <section id="home" className="hero">
-      <div className="hero-background">
-  <div className="floating-shapes">
-    <div className="shape shape-1"></div>
-    <div className="shape shape-2"></div>
-    <div className="shape shape-3"></div>
-    <div className="shape shape-4"></div>
+    <section id="home" className="hero-wrapper" ref={wrapperRef}>
+      <div className="hero-sticky">
 
-    {/* Extra floating shapes - same style */}
-    <div className="shape shape-5"></div>
-    <div className="shape shape-6"></div>
-    <div className="shape shape-7"></div>
-  </div>
-</div>
-
-
-      <div className="container hero-content">
-        <div className="hero-text animate-fadeInUp">
-          <p className="hero-greeting">Hello, I'm</p>
-          <h1 className="hero-title">
-            <span className="name">POOJA ELANGO</span>
-            <br />
-            <span className="role text-gradient">
-              {displayText}
-              <span className="cursor">|</span>
-            </span>
-          </h1>
-          <p className="hero-description">
-            Architect of intelligent interfaces, fusing algorithmic precision with expressive design.
-            I craft transformative digital experiences where AI, aesthetics, and functionality converge seamlessly.
-          </p>
-
-          <div className="hero-buttons">
-            <button className="btn btn-primary" onClick={scrollToContact}>
-              Get In Touch
-            </button>
-            <button className="btn btn-secondary" onClick={scrollToProjects}>
-              View My Work
-            </button>
+        {/* ── BOTTOM LAYER: Black text on white ── */}
+        <div className="hero-layer hero-layer-light">
+          <div className="container hero-content">
+            <div className="hero-bottom-left">
+              <span className="hero-label">MCA'26</span>
+            </div>
+              <div className="hero-main-text text-right">
+                <h1 className="hello-text">hello</h1>
+                <h1 className="name-text">I'm</h1>
+                <h1 className="name-text">Pooja</h1>
+              </div>
           </div>
         </div>
 
-       <div className="hero-visual">
-  <div className="hero-image-container">
-    <div className="hero-ring"></div> {/* <- Ring behind image */}
-    <div className="hero-image">
-      <div className="profile-placeholder">
-        <div className="profile-icon">
-          <img src={profile} alt="Profile" />
+        {/* ── TOP LAYER: White text inside dark panel (clips in from left) ── */}
+        <div className="hero-dark-panel" ref={darkPanelRef}>
+          <div className="hero-layer hero-layer-dark">
+            <div className="container hero-content">
+              <div className="hero-main-text text-left">
+                <h1 className="hello-text">hello</h1>
+                <h1 className="name-text">I'm</h1>
+                <h1 className="name-text">Pooja</h1>
+              </div>
+              <div className="hero-bottom-right">
+                <span className="hero-label text-right">A 23 YEAR OLD GIRL FROM INDIA :)</span>
+              </div>
+            </div>
+          </div>
         </div>
+
       </div>
-    </div>
-  </div>
-</div>
-
-
-
-
-
-        
-      </div>
-
-      
     </section>
   );
 };
