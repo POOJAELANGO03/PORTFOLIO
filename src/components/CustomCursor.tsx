@@ -38,21 +38,20 @@ const CustomCursor = () => {
       }
     };
 
-    // Outer ring follows with smooth lag (0.25)
-    // Inner ring follows with very slight lag (0.55)
     const loop = () => {
-      outerX += (mouseX - outerX) * 0.25;
-      outerY += (mouseY - outerY) * 0.25;
-      
-      innerX += (mouseX - innerX) * 0.55;
-      innerY += (mouseY - innerY) * 0.55;
+      // Both circles follow the mouse instantly without any lag
+      innerX += (mouseX - innerX) * 1;
+      innerY += (mouseY - innerY) * 1;
+
+      outerX += (mouseX - outerX) * 1;
+      outerY += (mouseY - outerY) * 1;
 
       if (outerRef.current) {
-        outerRef.current.style.transform = `translate(${outerX}px, ${outerY}px)`;
+        outerRef.current.style.transform = `translate3d(${outerX}px, ${outerY}px, 0)`;
       }
-      
+
       if (innerRef.current) {
-        innerRef.current.style.transform = `translate(${innerX}px, ${innerY}px)`;
+        innerRef.current.style.transform = `translate3d(${innerX}px, ${innerY}px, 0)`;
       }
 
       animId = requestAnimationFrame(loop);

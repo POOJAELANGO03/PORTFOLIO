@@ -10,35 +10,33 @@
 /* ---- Large lagging outer circle ---- */
 .c-outer {
   position: fixed;
-  top: -25px; /* Half of width to center */
-  left: -25px; /* Half of height to center */
+  top: -25px;
+  left: -25px;
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  /* Medium grey with transparency */
-  background: rgba(140, 140, 140, 0.35);
+  background: rgba(160, 160, 160, 0.25);
   pointer-events: none;
   z-index: 99998;
   will-change: transform;
-  /* Smooth transitions for hover effects if you add them later */
   transition: width 0.3s ease, height 0.3s ease,
               top 0.3s ease, left 0.3s ease,
               background 0.3s ease;
 }
 
-/* ---- Small instant inner circle ---- */
+/* ---- Small trailing inner circle ---- */
 .c-inner {
   position: fixed;
-  top: -13px; /* Half of width */
-  left: -13px; /* Half of height */
-  width: 26px;
-  height: 26px;
+  top: -10px;
+  left: -10px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
-  /* Lighter grey with higher opacity */
-  background: rgba(200, 200, 200, 0.85);
+  background: rgba(170, 170, 170, 0.55);
   pointer-events: none;
   z-index: 99999;
   will-change: transform;
+  transition: none !important;
 }
 
 /* ---- Arrow inside cursor (hidden by default) ---- */
@@ -59,10 +57,10 @@
 
 /* ---- Outer ring: expands on hover ---- */
 .c-outer.hovered {
-  width: 55px;
-  height: 55px;
-  top: -27px;
-  left: -27px;
+  width: 45px;
+  height: 45px;
+  top: -22.5px;
+  left: -22.5px;
   background: rgba(210, 210, 210, 0.80);
   transition: width 0.3s cubic-bezier(0.23, 1, 0.32, 1),
               height 0.3s cubic-bezier(0.23, 1, 0.32, 1),
