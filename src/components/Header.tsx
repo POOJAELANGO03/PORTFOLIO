@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import './Header.css';
+import resumePdf from '../assets/POOJA_RESUME.pdf';
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -85,12 +86,15 @@ const Header: React.FC = () => {
                 </a>
               </li>
               <li className="nav-item">
-                <button 
+                <a 
                   className="nav-link hover-target" 
-                  onClick={() => handleNavClick('', '')}
+                  href={resumePdf}
+                  download="POOJA_RESUME.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
                   Resume
-                </button>
+                </a>
               </li>
               <li className="nav-item">
                 <button 
