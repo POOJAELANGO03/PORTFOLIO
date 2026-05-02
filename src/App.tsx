@@ -1,4 +1,5 @@
 
+import { Routes, Route } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -14,11 +15,17 @@ function App() {
     <div className="App">
       <CustomCursor />
       <Header />
-      <Hero />
-      <About />
-      <Projects />
-      <Skills />
-      <Contact />
+      <Routes>
+        <Route path="/" element={
+          <>
+            <Hero />
+            <Projects />
+            <Skills />
+            <Contact />
+          </>
+        } />
+        <Route path="/about" element={<About />} />
+      </Routes>
       <Footer />
     </div>
   );
