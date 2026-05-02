@@ -39,6 +39,7 @@
 
 .nav-menu {
   display: flex;
+  align-items: center;
   list-style: none;
   gap: 2.5rem;
 }
@@ -48,6 +49,8 @@
 }
 
 .nav-link {
+  display: inline-flex;
+  align-items: center;
   background: none;
   border: none;
   color: #ffffff;  /* inverts via mix-blend-mode */

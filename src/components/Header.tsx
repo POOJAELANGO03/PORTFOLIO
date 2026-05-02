@@ -69,33 +69,27 @@ const Header: React.FC = () => {
               <li className="nav-item">
                 <button 
                   className="nav-link hover-target" 
-                  onClick={() => handleNavClick('', '/')}
-                >
-                  Home
-                </button>
-              </li>
-              <li className="nav-item">
-                <button 
-                  className="nav-link hover-target" 
                   onClick={() => handleNavClick('', '/about')}
                 >
                   About
                 </button>
               </li>
               <li className="nav-item">
-                <button 
+                <a 
                   className="nav-link hover-target" 
-                  onClick={() => handleNavClick('projects', '')}
+                  href="https://github.com/POOJAELANGO03"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  Projects
-                </button>
+                  Github
+                </a>
               </li>
               <li className="nav-item">
                 <button 
                   className="nav-link hover-target" 
-                  onClick={() => handleNavClick('skills', '')}
+                  onClick={() => handleNavClick('', '')}
                 >
-                  Skills
+                  Resume
                 </button>
               </li>
               <li className="nav-item">
