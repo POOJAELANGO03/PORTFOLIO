@@ -1,10 +1,10 @@
 import React from 'react';
 import './Projects.css';
 import { motion } from 'framer-motion';
-import project1Image from "../assets/icons/project1.png";
-import project2Image from "../assets/icons/project2.png";
-import project4Image from "../assets/icons/project4.png";
-import project5Image from "../assets/icons/project5.png";
+import project1Image from "../assets/project2.png"; // Placeholder since project1.png is missing
+import project2Image from "../assets/project2.png";
+import project4Image from "../assets/project4.png";
+import project5Image from "../assets/project4.png"; // Placeholder since project5.png is missing
 
 interface Project {
   id: number;

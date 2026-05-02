@@ -2,32 +2,32 @@ import React from 'react';
 import './Skills.css';
 import { motion } from 'framer-motion';
 
-import cssIcon from "../assets/icons/css.png";
 import firebaseIcon from "../assets/icons/firebase.png";
 import flutterIcon from "../assets/icons/flutter.png";
-import htmlIcon from "../assets/icons/html.png";
 import javaIcon from "../assets/icons/java.png";
 import javascriptIcon from "../assets/icons/javascript.png";
 import mongoDBIcon from "../assets/icons/MongoDB.png";
 import nodeIcon from "../assets/icons/node.png";
 import pythonIcon from "../assets/icons/python.png";
-import reactIcon from "../assets/icons/react.png";
-import typescriptIcon from "../assets/icons/typescript.png";
-import figmaIcon from "../assets/icons/figma.png";
+import reactIcon from "../assets/icons/react.svg";
+import expressIcon from "../assets/icons/Express.png";
+import githubIcon from "../assets/icons/GITHUB.png";
+import postgresIcon from "../assets/icons/PostgreSQL.png";
+import supabaseIcon from "../assets/icons/supabase.png";
 
 const iconMap: Record<string, string> = {
-  css: cssIcon,
   firebase: firebaseIcon,
   flutter: flutterIcon,
-  html: htmlIcon,
   java: javaIcon,
   javascript: javascriptIcon,
   mongodb: mongoDBIcon,
   nodejs: nodeIcon,
   python: pythonIcon,
   react: reactIcon,
-  typescript: typescriptIcon,
-  figma: figmaIcon,
+  express: expressIcon,
+  github: githubIcon,
+  postgres: postgresIcon,
+  supabase: supabaseIcon,
 };
 
 interface Skill {
@@ -37,17 +37,17 @@ interface Skill {
 
 const skillList: Skill[] = [
   { icon: 'react', label: 'React' },
-  { icon: 'typescript', label: 'TypeScript' },
   { icon: 'javascript', label: 'JavaScript' },
   { icon: 'nodejs', label: 'Node.js' },
+  { icon: 'express', label: 'Express' },
   { icon: 'python', label: 'Python' },
-  { icon: 'mongodb', label: 'MongoDB' },
-  { icon: 'firebase', label: 'Firebase' },
   { icon: 'java', label: 'Java' },
   { icon: 'flutter', label: 'Flutter' },
-  { icon: 'figma', label: 'Figma' },
-  { icon: 'html', label: 'HTML5' },
-  { icon: 'css', label: 'CSS3' },
+  { icon: 'mongodb', label: 'MongoDB' },
+  { icon: 'postgres', label: 'PostgreSQL' },
+  { icon: 'firebase', label: 'Firebase' },
+  { icon: 'supabase', label: 'Supabase' },
+  { icon: 'github', label: 'GitHub' },
 ];
 
 const Skills: React.FC = () => {
