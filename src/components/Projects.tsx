@@ -36,28 +36,29 @@ const Projects: React.FC = () => {
     },
     {
       id: 3,
-      title: "SentimentIQ",
-      description: "Transformer-based Sentiment & Emotion Analysis System Designed an AI-powered NLP system using BERT/RoBERTa models to detect emotions and sentiment from multilingual (Tanglish + English) text, with automated preprocessing, translation, and visualization.",
-      technologies: ["Python", "Transformers", "PyTorch", "Pandas", "Matplotlib", "Seaborn"],
-      image: sentimentImg,
-      githubUrl: "https://github.com/POOJAELANGO03/SentimentIQ"
-    },
-    {
-      id: 4,
-      title: "Crowd-Intelligence-System",
-      description: "An intelligent video analytics system that detects people, estimates crowd density, and analyzes gender demographics using YOLOv8 and DeepFace. It provides time-series insights, crowd-level classification, and API-based analytics for real-time monitoring and decision-making.",
-      technologies: ["Python", "Transformers", "PyTorch", "Pandas", "Matplotlib", "Seaborn"],
-      image: crowdImg,
-      githubUrl: "https://github.com/POOJAELANGO03/Crowd-Intelligence-System"
-    },
-    {
-      id: 5,
       title: "CourseHive",
       description: "A Flutter-based peer-to-peer course upload and learning platform developed as part of a 2nd-round interview task. The app allows trainers to upload structured video lessons, learners to browse/preview/unlock courses, and admins to monitor platform analytics.",
       technologies: ["Flutter", "Firebase", "Cloudinary"],
       image: coursehiveImg,
       githubUrl: "https://github.com/POOJAELANGO03/CourseHive"
-    }
+    },
+    {
+      id: 4,
+      title: "SentimentIQ",
+      description: "Transformer-based Sentiment & Emotion Analysis System Designed an AI-powered NLP system using BERT/RoBERTa models to detect emotions and sentiment from multilingual (Tanglish + English) text, with automated preprocessing, translation, and visualization.",
+      technologies: ["Python", "Transformers (HuggingFace)", "PyTorch", "Pandas", "Matplotlib", "Seaborn", "Emoji", "tqdm", "Langdetect"],
+      image: sentimentImg,
+      githubUrl: "https://github.com/POOJAELANGO03/SentimentIQ"
+    },
+    {
+      id: 5,
+      title: "Crowd Intelligence System",
+      description: "An intelligent video analytics system that detects people, estimates crowd density, and analyzes gender demographics using YOLOv8 and DeepFace. It provides time-series insights, crowd-level classification, and API-based analytics for real-time monitoring and decision-making.",
+      technologies: ["Python", "OpenCV", "Ultralytics YOLOv8", "DeepFace (VGG-Face)", "Pandas", "Matplotlib", "FastAPI", "PostgreSQL", "HTML", "Chart.js"],
+      image: crowdImg,
+      githubUrl: "https://github.com/POOJAELANGO03/Crowd-Intelligence-System"
+    },
+
   ];
 
   return (
@@ -69,8 +70,8 @@ const Projects: React.FC = () => {
 
         <div className="projects-flex-grid">
           {projects.map((project, index) => (
-            <motion.div 
-              key={project.id} 
+            <motion.div
+              key={project.id}
               className="project-card"
               initial={{ y: 50, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
