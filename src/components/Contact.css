@@ -26,11 +26,12 @@
 
 .contact-title {
   font-family: 'Manrope', sans-serif;
-  font-size: 2.5rem;
+  font-size: 4.2rem;
   font-weight: 800;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.04em;
   color: #000;
   margin: 0;
+  line-height: 1.05;
 }
 
 .contact-desc {
@@ -80,13 +81,71 @@
   color: #fff;
 }
 
-/* ---------- Right: Social Circles ---------- */
+/* ---------- Right: Social Circles & Spinning Text ---------- */
 .contact-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  flex-shrink: 0;
+}
+
+.spinning-circle-wrapper {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinning-svg {
+  animation: spin 15s linear infinite;
+  transform-origin: center center;
+}
+
+.spinning-text {
+  fill: #111;
+  font-family: 'Inter', sans-serif;
+  font-size: 16.5px;
+  letter-spacing: 4.2px;
+  text-transform: none;
+  font-weight: 500;
+}
+
+.red-star-text {
+  fill: #ff0000;
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.spinning-asterisk {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 72px;
+  line-height: 1;
+  color: #111;
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  pointer-events: none;
+  margin-top: 12px;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.contact-social-icons {
   display: flex;
   gap: 0.75rem;
   align-items: center;
-  flex-shrink: 0;
-  padding-top: 0.5rem;
 }
 
 .social-circle {
