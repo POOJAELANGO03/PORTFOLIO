@@ -26,7 +26,17 @@
   background: #ffffff;
   display: flex;
   flex-direction: column;
-  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  border-radius: 12px;
+  overflow: hidden;
+  padding: 12px;
+  border: 1px solid transparent;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+  border-color: #f0f0f0;
 }
 
 .project-link-wrapper {
@@ -42,7 +52,8 @@
   overflow: hidden;
   margin-bottom: 1.5rem;
   background: #f5f5f5;
-  border-radius: 4px;
+  border-radius: 8px;
+  position: relative;
 }
 
 .project-img {
@@ -54,7 +65,7 @@
 }
 
 .project-card:hover .project-img {
-  transform: scale(1.04);
+  transform: scale(1.05);
   filter: grayscale(0%);
 }
 
@@ -63,6 +74,7 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 0.75rem;
+  position: relative;
 }
 
 .project-title {
@@ -71,17 +83,46 @@
   letter-spacing: -0.03em;
   margin: 0;
   color: #000;
+  position: relative;
+}
+
+.project-title::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #000;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-card:hover .project-title::after {
+  transform: scaleX(1);
 }
 
 .project-arrow {
-  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 6px;
+  border: 1.5px solid #eaeaea;
+  font-size: 1.3rem;
   font-weight: 400;
   line-height: 1;
-  transition: transform 0.3s ease;
+  background: #ffffff;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .project-card:hover .project-arrow {
-  transform: translate(4px, -4px);
+  background: #000000;
+  color: #ffffff;
+  border-color: #000000;
+  transform: rotate(45deg);
 }
 
 .project-info-box {
@@ -107,10 +148,16 @@
 .tech-tag {
   font-size: 0.8rem;
   font-weight: 600;
-  color: #000;
+  color: #333;
   background: #f1f1f1;
-  padding: 0.3rem 0.6rem;
-  border-radius: 4px;
+  padding: 0.35rem 0.7rem;
+  border-radius: 6px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.project-card:hover .tech-tag {
+  background: #000000;
+  color: #ffffff;
 }
 
 .more-projects-wrapper {
