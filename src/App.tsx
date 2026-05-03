@@ -1,5 +1,5 @@
 
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import './App.css';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -10,6 +10,9 @@ import Footer from './components/Footer';
 import CustomCursor from './components/CustomCursor';
 
 function App() {
+  const location = useLocation();
+  const isAboutPage = location.pathname === '/about';
+
   return (
     <div className="App">
       <CustomCursor />
@@ -24,7 +27,7 @@ function App() {
         } />
         <Route path="/about" element={<About />} />
       </Routes>
-      <Footer />
+      {!isAboutPage && <Footer />}
     </div>
   );
 }

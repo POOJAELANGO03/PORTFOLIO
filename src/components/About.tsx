@@ -1,6 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import './About.css';
+import pubCert from '../assets/PUBLICATION CERTIFICATE.pdf';
+import twinCert from '../assets/TWIN COMPLETTION CERTIFICATE.pdf';
+import cubeCert from '../assets/CUBE INTERN CERTIFICATE.pdf';
+import sqlCert from '../assets/SQL CERTIFICATE.pdf';
+import deloitteCert from '../assets/DELOITTE CERTIFICATION.pdf';
 
 // Icons
 import expressIcon from '../assets/icons/Express.png';
@@ -79,7 +84,8 @@ const experience = [
       "Worked on a real-time Flutter project involving role-based modules (User, Owner, Admin).",
       "Integrated key features like geolocation, Firebase Storage, and Razorpay payments.",
       "Strengthened understanding of Flutter architectures and state management."
-    ]
+    ],
+    certificate: twinCert
   },
   {
     period: "June 2025 – August 2025",
@@ -89,7 +95,8 @@ const experience = [
     desc: [
       "Self-learned key Flutter development concepts to independently build a functional product model.",
       "Developed and presented a working product prototype to the client, securing confirmation for further development."
-    ]
+    ],
+    certificate: cubeCert
   }
 ];
 
@@ -251,10 +258,128 @@ const About: React.FC = () => {
               ) : (
                 <p className="traditional-exp-bullets-text">{exp.desc}</p>
               )}
+              {exp.certificate && (
+                <div style={{ marginTop: '15px' }}>
+                  <a 
+                    href={exp.certificate} 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="pub-link hover-target"
+                    style={{ padding: '8px 20px', fontSize: '0.95rem' }}
+                  >
+                    View Certificate
+                  </a>
+                </div>
+              )}
             </motion.div>
           ))}
         </div>
       </section>
+
+      {/* PUBLICATION-RESEARCH SECTION */}
+      <section className="about-section">
+        <motion.div 
+          className="watermark-container"
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+        >
+          <h1 className="watermark-bg">RESEARCH</h1>
+          <h2 className="watermark-fg">Publication</h2>
+        </motion.div>
+        
+        <motion.div 
+          className="section-content pub-text-content"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ delay: 0.2 }}
+        >
+          <div className="pub-card hover-target">
+            <h3 className="pub-title">Contextual Sentiment Analysis Using Transformer-Based Models</h3>
+            <h4 className="pub-conference">Paper Presentation — International Conference on Electronics and Renewable Systems (ICEARS)</h4>
+            <p className="pub-desc">
+              Presented a research paper on analyzing Tanglish chat messages using a Transformer-based NLP model (BERT) to detect emotions such as joy, anger, sadness, and fear.
+            </p>
+            <div className="pub-links">
+              <a href="https://github.com/POOJAELANGO03/SentimentIQ" target="_blank" rel="noopener noreferrer" className="pub-link hover-target">
+                View on GitHub
+              </a>
+              <a href={pubCert} target="_blank" rel="noopener noreferrer" className="pub-link hover-target">
+                Publication Certificate
+              </a>
+            </div>
+          </div>
+        </motion.div>
+      </section>
+
+      {/* CERTIFICATIONS SECTION */}
+      <section className="about-section">
+        <motion.div 
+          className="watermark-container"
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+        >
+          <h1 className="watermark-bg">ACCOLADES</h1>
+          <h2 className="watermark-fg">Certifications</h2>
+        </motion.div>
+        
+        <motion.div 
+          className="section-content list-container"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ delay: 0.2 }}
+        >
+          {/* Oracle Certification Card */}
+          <div className="traditional-exp-item" style={{ marginBottom: '50px' }}>
+            <h3 className="traditional-exp-role">Oracle Certified Associate (OCA) — MySQL Implementation</h3>
+            <h4 className="traditional-exp-company">Oracle University</h4>
+            <p className="traditional-exp-date">July 2025</p>
+            <div style={{ marginTop: '15px' }}>
+              <a 
+                href={sqlCert} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="pub-link hover-target"
+                style={{ padding: '8px 20px', fontSize: '0.95rem' }}
+              >
+                View Oracle Certificate
+              </a>
+            </div>
+          </div>
+
+          {/* Deloitte Certification Card */}
+          <div className="traditional-exp-item">
+            <h3 className="traditional-exp-role">Deloitte Technology Job Simulation — Coding & Development</h3>
+            <h4 className="traditional-exp-company">Deloitte</h4>
+            <p className="traditional-exp-date">July 2025</p>
+            <div style={{ marginTop: '15px' }}>
+              <a 
+                href={deloitteCert} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="pub-link hover-target"
+                style={{ padding: '8px 20px', fontSize: '0.95rem' }}
+              >
+                View Deloitte Certificate
+              </a>
+            </div>
+          </div>
+        </motion.div>
+      </section>
+
+      {/* Inspired By Footnote */}
+      <div className="inspired-by-footer">
+        <p>
+          Website inspired from{' '}
+          <a href="https://github.com/adamsyy" target="_blank" rel="noopener noreferrer" className="hover-target inspired-link">
+            adamsyy
+          </a>{' '}
+          🎉 ☕
+        </p>
+      </div>
 
     </div>
   );

@@ -89,7 +89,6 @@ const Header: React.FC = () => {
                 <a 
                   className="nav-link hover-target" 
                   href={resumePdf}
-                  download="POOJA_RESUME.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
