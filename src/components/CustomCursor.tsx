@@ -26,25 +26,25 @@ const CustomCursor = () => {
 
     const onMouseOver = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
-      if (target.closest('a, button, .hover-target')) {
+      if (target.closest('a, button, .hover-target, input, textarea, label, [role="button"], .gallery-img-wrapper')) {
         setIsHovered(true);
       }
     };
 
     const onMouseOut = (e: MouseEvent) => {
       const target = e.target as HTMLElement;
-      if (target.closest('a, button, .hover-target')) {
+      if (target.closest('a, button, .hover-target, input, textarea, label, [role="button"], .gallery-img-wrapper')) {
         setIsHovered(false);
       }
     };
 
     const loop = () => {
-      // Both circles follow the mouse instantly without any lag
+      // Smooth lag for outer circle, instant for inner dot
       innerX += (mouseX - innerX) * 1;
       innerY += (mouseY - innerY) * 1;
 
-      outerX += (mouseX - outerX) * 1;
-      outerY += (mouseY - outerY) * 1;
+      outerX += (mouseX - outerX) * 0.15;
+      outerY += (mouseY - outerY) * 0.15;
 
       if (outerRef.current) {
         outerRef.current.style.transform = `translate3d(${outerX}px, ${outerY}px, 0)`;
