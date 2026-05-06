@@ -116,8 +116,8 @@ const About: React.FC = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-100px" }}
         >
-          <h1 className="watermark-bg">POOJA</h1>
-          <h2 className="watermark-fg">About Me</h2>
+          <span className="watermark-bg">POOJA</span>
+          <h1 className="watermark-fg">About Me</h1>
         </motion.div>
         
         <motion.div 
@@ -142,7 +142,7 @@ const About: React.FC = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-100px" }}
         >
-          <h1 className="watermark-bg">TECH STACK</h1>
+          <span className="watermark-bg">TECH STACK</span>
           <h2 className="watermark-fg">Tech I'm familiar with</h2>
         </motion.div>
         
@@ -201,7 +201,7 @@ const About: React.FC = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-100px" }}
         >
-          <h1 className="watermark-bg">ACADEMICS</h1>
+          <span className="watermark-bg">ACADEMICS</span>
           <h2 className="watermark-fg">Education</h2>
         </motion.div>
         
@@ -236,7 +236,7 @@ const About: React.FC = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-100px" }}
         >
-          <h1 className="watermark-bg">PROFILE</h1>
+          <span className="watermark-bg">PROFILE</span>
           <h2 className="watermark-fg">Experience</h2>
         </motion.div>
         
@@ -288,7 +288,7 @@ const About: React.FC = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-100px" }}
         >
-          <h1 className="watermark-bg">RESEARCH</h1>
+          <span className="watermark-bg">RESEARCH</span>
           <h2 className="watermark-fg">Publication</h2>
         </motion.div>
         
@@ -325,7 +325,7 @@ const About: React.FC = () => {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true, margin: "-100px" }}
         >
-          <h1 className="watermark-bg">ACCOLADES</h1>
+          <span className="watermark-bg">ACCOLADES</span>
           <h2 className="watermark-fg">Certifications</h2>
         </motion.div>
         

@@ -56,7 +56,7 @@ const Hero: React.FC = () => {
               <span className="hero-label">MCA'26</span>
             </div>
             <div className="hero-main-text text-right">
-              <h1 className="hello-text" ref={lightHelloRef}>hello</h1>
+              <span className="hello-text" ref={lightHelloRef}>hello</span>
               <h1 className="name-text" ref={lightNameRef}>I'm Pooja</h1>
             </div>
           </div>
@@ -75,8 +75,8 @@ const Hero: React.FC = () => {
                 <span className="hero-label tagline-label">A 23 year old girl from India :)</span>
               </div>
               <div className="hero-main-text text-right">
-                <h1 className="hello-text" ref={darkHelloRef}>hello</h1>
-                <h1 className="name-text" ref={darkNameRef}>I'm Pooja</h1>
+                <span className="hello-text" ref={darkHelloRef}>hello</span>
+                <span className="name-text" ref={darkNameRef}>I'm Pooja</span>
               </div>
             </div>
           </div>
