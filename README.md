@@ -1,69 +1,72 @@
-# React + TypeScript + Vite
+# Pooja Elango — Developer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A high-end, modern, and fully responsive developer portfolio built with React, TypeScript, and Framer Motion. This project showcases technical expertise through a premium UI/UX design inspired by contemporary web aesthetics.
 
-Currently, two official plugins are available:
+![Portfolio Preview](/og-image.png)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## ✨ Features
 
-## Expanding the ESLint configuration
+- **Dual-Layer Scroll Wipe**: A sophisticated Adamsy-style hero section with a smooth scroll-triggered dark/light panel reveal.
+- **Custom Cursor System**: A high-performance, magnetic custom cursor that interacts with clickable elements.
+- **Responsive Design**: Fully optimized for all devices, from ultra-wide desktops to mobile screens.
+- **Modern Typography**: Curated font hierarchy using Manrope and Inter for a premium feel.
+- **Interactive Gallery**: Grayscale-to-color transition gallery in the contact section with artistic sibling hover effects.
+- **Optimized for SEO**: Semantic HTML5 structure, proper heading hierarchy, and meta-tag optimization.
+- **Smooth Animations**: Powered by Framer Motion for high-quality transitions and micro-interactions.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🚀 Tech Stack
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- **Framework**: [React 18](https://reactjs.org/)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: Vanilla CSS (Modern Flexbox/Grid)
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Bundler**: [Vite](https://vitejs.dev/)
+- **Deployment**: Optimized for platforms like Vercel or Netlify
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+## 🛠️ Installation & Setup
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/POOJAELANGO03/PORTFOLIO.git
+   ```
+
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Run the development server**
+   ```bash
+   npm run dev
+   ```
+
+4. **Build for production**
+   ```bash
+   npm run build
+   ```
+
+## 📂 Project Structure
+
+```text
+src/
+├── assets/          # Static assets (images, icons, certificates)
+├── components/      # React components (Hero, About, Projects, etc.)
+│   ├── About.tsx    # Technical background and credentials
+│   ├── Contact.tsx  # Social links and interactive gallery
+│   ├── Hero.tsx     # Animated entrance section
+│   └── Projects.tsx # Showcase of shipped projects
+├── App.tsx          # Main application logic and routing
+└── index.css        # Global styles and design system
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🎨 Design Philosophy
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+This portfolio prioritizes **Aesthetics and User Experience**. By using a "difference" mix-blend mode for navigation and a minimal monochrome-inspired palette, the focus remains entirely on the content while providing a "state-of-the-art" browsing experience.
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 📝 License
+
+This project is open-source and available under the [MIT License](LICENSE).
+
+---
+*Created with ❤️ by Pooja Elango*
+
