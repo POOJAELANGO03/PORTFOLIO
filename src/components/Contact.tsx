@@ -52,7 +52,7 @@ const Contact: React.FC = () => {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <img src={aboutLeft} alt="Memory 1" />
+              <img src={aboutLeft} alt="Pooja Elango working on a project" />
             </motion.div>
             <motion.div 
               className="gallery-img-wrapper center-img"
@@ -61,7 +61,7 @@ const Contact: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.1 }}
               viewport={{ once: true }}
             >
-              <img src={aboutCenter} alt="Memory 2" />
+              <img src={aboutCenter} alt="Pooja Elango presentation" />
             </motion.div>
             <motion.div 
               className="gallery-img-wrapper"
@@ -70,7 +70,7 @@ const Contact: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <img src={aboutRight} alt="Memory 3" />
+              <img src={aboutRight} alt="Pooja Elango collaboration" />
             </motion.div>
             <motion.div 
               className="gallery-img-wrapper"
@@ -79,7 +79,7 @@ const Contact: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
               viewport={{ once: true }}
             >
-              <img src={aboutRight2} alt="Memory 4" />
+              <img src={aboutRight2} alt="Pooja Elango development session" />
             </motion.div>
           </div>
           
