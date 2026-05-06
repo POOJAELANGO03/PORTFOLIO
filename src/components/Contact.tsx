@@ -1,14 +1,106 @@
 import React from 'react';
 import './Contact.css';
 import { motion } from 'framer-motion';
-
+import { Link } from 'react-router-dom';
+import aboutLeft from '../assets/ABOUT LEFT.jpeg';
+import aboutCenter from '../assets/ABOUT CENTER.jpeg';
+import aboutRight from '../assets/ABOUT RIGHT 1.jpeg';
+import aboutRight2 from '../assets/ABOUT RIGHT 2.jpeg';
 const Contact: React.FC = () => {
   return (
-    <section id="contact" className="contact">
-      <div className="container">
-        <div className="contact-inner">
+    <>
+      <div className="contact-marquee-wrapper">
+        <div className="contact-marquee">
+          <div className="contact-marquee-content">
+            <span>IDEATE.</span>
+            <span>IMPLEMENT.</span>
+            <span>ITERATE.</span>
+            <span>IDEATE.</span>
+            <span>IMPLEMENT.</span>
+            <span>ITERATE.</span>
+            <span>IDEATE.</span>
+            <span>IMPLEMENT.</span>
+            <span>ITERATE.</span>
+            <span>IDEATE.</span>
+            <span>IMPLEMENT.</span>
+            <span>ITERATE.</span>
+          </div>
+          <div className="contact-marquee-content" aria-hidden="true">
+            <span>IDEATE.</span>
+            <span>IMPLEMENT.</span>
+            <span>ITERATE.</span>
+            <span>IDEATE.</span>
+            <span>IMPLEMENT.</span>
+            <span>ITERATE.</span>
+            <span>IDEATE.</span>
+            <span>IMPLEMENT.</span>
+            <span>ITERATE.</span>
+            <span>IDEATE.</span>
+            <span>IMPLEMENT.</span>
+            <span>ITERATE.</span>
+          </div>
+        </div>
+      </div>
 
-          {/* Left Side */}
+      <div className="contact-gallery-section">
+        <div className="contact-gallery-container">
+          <div className="contact-gallery-grid">
+            <motion.div 
+              className="gallery-img-wrapper"
+              initial={{ y: 30, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <img src={aboutLeft} alt="Memory 1" />
+            </motion.div>
+            <motion.div 
+              className="gallery-img-wrapper center-img"
+              initial={{ y: 30, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+            >
+              <img src={aboutCenter} alt="Memory 2" />
+            </motion.div>
+            <motion.div 
+              className="gallery-img-wrapper"
+              initial={{ y: 30, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <img src={aboutRight} alt="Memory 3" />
+            </motion.div>
+            <motion.div 
+              className="gallery-img-wrapper"
+              initial={{ y: 30, opacity: 0 }}
+              whileInView={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+            >
+              <img src={aboutRight2} alt="Memory 4" />
+            </motion.div>
+          </div>
+          
+          <motion.div 
+            className="know-more-btn-wrapper"
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.4 }}
+            viewport={{ once: true }}
+          >
+            <Link to="/about" className="know-more-btn">
+              Know more about me
+            </Link>
+          </motion.div>
+        </div>
+      </div>
+
+      <section id="contact" className="contact">
+        <div className="container">
+          <div className="contact-inner">
+            {/* Left Side */}
           <motion.div
             className="contact-left"
             initial={{ y: 20, opacity: 0 }}
@@ -80,6 +172,7 @@ const Contact: React.FC = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 

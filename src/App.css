@@ -3,8 +3,8 @@
   position: relative;
 }
 
-/* Smooth transitions for all elements */
-* {
+/* Smooth transitions for interactive elements */
+a, button, .clickable {
   transition: all 0.3s ease;
 }
 

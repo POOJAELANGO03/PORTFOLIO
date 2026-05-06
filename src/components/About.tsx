@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import './About.css';
 import pubCert from '../assets/PUBLICATION CERTIFICATE.pdf';
@@ -101,6 +101,10 @@ const experience = [
 ];
 
 const About: React.FC = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="about-page">
       
