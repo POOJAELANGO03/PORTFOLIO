@@ -17,10 +17,12 @@
   border-radius: 50%;
   background: rgba(160, 160, 160, 0.25);
   pointer-events: none;
-  z-index: 99998;
+  z-index: 999999;
   will-change: transform;
-  transition: width 0.3s ease, height 0.3s ease,
-              top 0.3s ease, left 0.3s ease,
+  transition: width 0.3s cubic-bezier(0.23, 1, 0.32, 1), 
+              height 0.3s cubic-bezier(0.23, 1, 0.32, 1),
+              top 0.3s cubic-bezier(0.23, 1, 0.32, 1), 
+              left 0.3s cubic-bezier(0.23, 1, 0.32, 1),
               background 0.3s ease;
 }
 
@@ -34,9 +36,9 @@
   border-radius: 50%;
   background: rgba(170, 170, 170, 0.55);
   pointer-events: none;
-  z-index: 99999;
+  z-index: 1000000;
   will-change: transform;
-  transition: none !important;
+  transition: opacity 0.2s ease;
 }
 
 /* ---- Arrow inside cursor (hidden by default) ---- */
@@ -46,7 +48,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 600;
   color: #111;
   opacity: 0;
@@ -57,16 +59,11 @@
 
 /* ---- Outer ring: expands on hover ---- */
 .c-outer.hovered {
-  width: 45px;
-  height: 45px;
-  top: -22.5px;
-  left: -22.5px;
-  background: rgba(210, 210, 210, 0.80);
-  transition: width 0.3s cubic-bezier(0.23, 1, 0.32, 1),
-              height 0.3s cubic-bezier(0.23, 1, 0.32, 1),
-              top 0.3s cubic-bezier(0.23, 1, 0.32, 1),
-              left 0.3s cubic-bezier(0.23, 1, 0.32, 1),
-              background 0.3s ease;
+  width: 60px;
+  height: 60px;
+  top: -30px;
+  left: -30px;
+  background: rgba(200, 200, 200, 0.7);
 }
 
 .c-outer.hovered .c-arrow {
