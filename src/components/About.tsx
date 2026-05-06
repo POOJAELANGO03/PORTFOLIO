@@ -375,7 +375,7 @@ const About: React.FC = () => {
       </section>
 
       {/* Inspired By Footnote */}
-      <div className="inspired-by-footer">
+      {/* <div className="inspired-by-footer">
         <p>
           Website inspired from{' '}
           <a href="https://github.com/adamsyy" target="_blank" rel="noopener noreferrer" className="hover-target inspired-link">
@@ -383,7 +383,7 @@ const About: React.FC = () => {
           </a>{' '}
           🎉 ☕
         </p>
-      </div>
+      </div> */}
 
     </div>
   );
