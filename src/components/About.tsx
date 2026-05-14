@@ -37,7 +37,7 @@ const techStack = [
 ];
 
 const aiStack = [
-  "TensorFlow", "Keras", "CNN", "VGG-16", "Inception v3", "YOLO-v3", "OpenCV", "DeepFace", "InsightFace"
+  "TensorFlow", "Keras", "CNN", "VGG-16", "Inception v3", "YOLO-V8", "OpenCV", "Pandas", "NumPy", "Matplotlib", "Seaborn"
 ];
 
 const education = [
