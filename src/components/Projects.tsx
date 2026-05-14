@@ -53,8 +53,8 @@ const Projects: React.FC = () => {
     {
       id: 5,
       title: "Crowd Intelligence System",
-      description: "An intelligent video analytics system that detects people, estimates crowd density, and analyzes gender demographics using YOLOv8 and DeepFace. It provides time-series insights, crowd-level classification, and API-based analytics for real-time monitoring and decision-making.",
-      technologies: ["Python", "OpenCV", "Ultralytics YOLOv8", "DeepFace (VGG-Face)", "Pandas", "Matplotlib", "FastAPI", "PostgreSQL", "HTML", "Chart.js"],
+      description: "An intelligent video analytics system that detects people, estimates crowd density, and analyzes gender demographics using YOLOv8. It provides time-series insights, crowd-level classification, and API-based analytics for real-time monitoring and decision-making.",
+      technologies: ["Python", "OpenCV", "Ultralytics YOLOv8", "Pandas", "Matplotlib", "FastAPI", "PostgreSQL", "HTML", "Chart.js"],
       image: crowdImg,
       githubUrl: "https://github.com/POOJAELANGO03/Crowd-Intelligence-System"
     },
